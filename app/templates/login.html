@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Hospital Appointment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <form method="POST" action="/login" onsubmit="return validateLogin()"></form>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>🏥 HospitalCare</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+</header>
+
+
+<section class="form-section">
+
+    <h2>Login to Your Account</h2>
+
+    <form method="POST" action="/login">
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p>
+        Don't have an account?
+        <a href="/register">Register here</a>
+    </p>
+
+</section>
+
+</body>
+</html>
+
+<h2>Login</h2>
+
+<form method="POST">
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
