@@ -28,6 +28,84 @@
 </tr>
 
 </table>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>🏥 HospitalCare</h2>
+
+        <div>
+            <a href="/doctor_dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+</header>
+
+
+<section class="dashboard">
+
+    <h1>Welcome Doctor</h1>
+
+    <div class="dashboard-container">
+
+        <div class="card">
+            <h3>📅 Today's Appointments</h3>
+            <p>View appointments scheduled for today.</p>
+        </div>
+
+        <div class="card">
+            <h3>📋 Patient Requests</h3>
+            <p>Check new appointment requests.</p>
+        </div>
+
+        <div class="card">
+            <h3>👤 Profile</h3>
+            <p>View and update doctor profile.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="appointment-table">
+
+    <h2>Today's Appointment List</h2>
+
+    <table>
+
+        <tr>
+            <th>Patient Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Rahul</td>
+            <td>15 March 2026</td>
+            <td>10:00 AM</td>
+            <td>Pending</td>
+        </tr>
+
+        <tr>
+            <td>Arjun</td>
+            <td>15 March 2026</td>
+            <td>11:30 AM</td>
+            <td>Confirmed</td>
+        </tr>
+
+    </table>
+
+</section>
 
 </body>
 </html>
