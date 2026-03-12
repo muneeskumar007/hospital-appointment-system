@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>🏥 HospitalCare</h2>
+
+        <div>
+            <a href="/patient_dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+</header>
+
+<section class="form-section">
+
+    <h2>Book an Appointment</h2>
+
+    <form method="POST" action="/appointment">
+
+        <label>Select Doctor</label>
+        <select name="doctor" required>
+            <option value="">-- Choose Doctor --</option>
+            <option value="Dr. Smith">Dr. Smith</option>
+            <option value="Dr. John">Dr. John</option>
+            <option value="Dr. Patel">Dr. Patel</option>
+        </select>
+
+        <label>Appointment Date</label>
+        <input type="date" name="date" required>
+
+        <label>Appointment Time</label>
+        <input type="time" name="time" required>
+
+        <label>Symptoms / Reason</label>
+        <textarea name="symptoms" placeholder="Describe your problem" required></textarea>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+
+</section>
+
+</body>
+</html>
