@@ -10,6 +10,14 @@ body.auth-page{
   overflow: hidden;
 }
 
+#particle-canvas{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
 .bg-animation{
   position: fixed;
   inset: 0;
@@ -40,13 +48,143 @@ body.auth-page{
   background: rgba(155, 89, 182, 0.55);
   bottom: -25%;
   right: -25%;
-  animation-duration: 14s;
+  animation-duration: 8s;
 }
 
 @keyframes float{
   0%{transform: translate(0,0) scale(1);}
   50%{transform: translate(30px, -40px) scale(1.05);}
   100%{transform: translate(-20px, 30px) scale(1);}
+}
+
+/* Login form animations */
+.auth-container{
+  position: relative;
+  z-index: 2;
+  display:flex;
+  width:900px;
+  margin:60px auto;
+  background: rgba(255,255,255,0.92);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn{
+  0%{
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-left{
+  width:50%;
+  background:#eaf3ff;
+  padding:40px;
+  text-align:center;
+  animation: fadeInLeft 1.0s ease-out;
+}
+
+@keyframes fadeInLeft{
+  0%{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.auth-right{
+  width:50%;
+  padding:40px;
+  animation: fadeInRight 1.0s ease-out;
+}
+
+@keyframes fadeInRight{
+  0%{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.auth-form input,
+.auth-form select{
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:14px;
+  transition: all 0.3s ease;
+  animation: inputSlide 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.auth-form input:nth-child(1){animation-delay: 0.2s;}
+.auth-form input:nth-child(2){animation-delay: 0.4s;}
+.auth-form input:nth-child(3){animation-delay: 0.6s;}
+.auth-form select{animation-delay: 0.8s;}
+
+@keyframes inputSlide{
+  0%{
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.auth-form input:focus{
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+  transform: scale(1.02);
+}
+
+.auth-btn{
+  background:#3498db;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+  transition: all 0.3s ease;
+  animation: btnPulse 0.6s ease-out 1.0 forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes btnPulse{
+  0%{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.auth-btn:hover{
+  background:#2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
 
