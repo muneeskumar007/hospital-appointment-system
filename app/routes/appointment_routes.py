@@ -1,40 +1,37 @@
-from flask import Blueprint,render_template,request,redirect,url_for
-from app.services.appointment_service import *
-
-appointment_bp = Blueprint('appointment',__name__)
-
-@appointment_bp.route("/appointment")
-
-def appointment_page():
-    return render_template("appointment.html")
 
 
-@appointment_bp.route("/book",methods=["POST"])
-def book():
+from flask import Blueprint, session, redirect, render_template
+from app.services.db import mysql
 
-    patient_id = request.form["patient_id"]
-    doctor_id = request.form["doctor_id"]
-    date = request.form["date"]
-    time = request.form["time"]
-
-    book_appointment(patient_id,doctor_id,date,time)
-
-    return redirect("/appointment")
+appointment_bp = Blueprint("appointment", __name__)
 
 
-@appointment_bp.route("/myappointments/<int:patient_id>")
+    # continue booking
 
-def myappointments(patient_id):
+@appointment_bp.route("/book/<int:doctor_id>/<int:slot_id>")
+def book(doctor_id,slot_id):
 
-    data = get_patient_appointments(patient_id)
+    if "user_id" not in session:
+        return redirect("/login")
 
-    return render_template("appointment.html",appointments=data)
+    cur = mysql.connection.cursor()
 
+    cur.execute(
+    "SELECT COUNT(*) FROM appointments WHERE doctor_id=%s",
+    (doctor_id,)
+    )
 
-@appointment_bp.route("/cancel/<int:id>")
+    count = cur.fetchone()[0]
 
-def cancel(id):
+    token = count + 1
 
-    cancel_appointment(id)
+    cur.execute(
+    """INSERT INTO appointments
+    (patient_id,doctor_id,slot_id,token_number,status,appointment_date)
+    VALUES(%s,%s,%s,%s,'Booked',CURDATE())""",
+    (session["user_id"],doctor_id,slot_id,token)
+    )
 
-    return redirect("/appointment")
+    mysql.connection.commit()
+
+    return render_template("token.html", token=token)

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>Doctors</h2>
+<a href="/">Home</a>
+</div>
+
+<div class="container">
+
+<div class="doctor-grid">
+
+{% for d in doctors %}
+
+<div class="card">
+
+<h3>Dr {{d.name}}</h3>
+
+<p>Specialty: {{d.specialty}}</p>
+
+<p>Experience: {{d.experience}} years</p>
+
+<p>Consultation Fee: ₹{{d.fee}}</p>
+
+<a class="btn" href="/doctor/{{d.id}}">View Profile</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>

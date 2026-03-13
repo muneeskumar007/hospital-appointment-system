@@ -1,271 +1,135 @@
 body{
-    font-family: Arial;
-    margin:0;
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f5f7fb;
 }
 
-header{
-    background:#2c7be5;
-    color:white;
-    padding:15px;
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#2c3e50;
+color:white;
+padding:15px 40px;
 }
 
-nav a{
-    margin:10px;
-    text-decoration:none;
+.nav-links a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:500;
 }
 
-body{
-    font-family: Arial;
-    margin:0;
-}
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    background:#2c7be5;
-    color:white;
-    padding:15px;
-}
-
-nav a{
-    color:white;
-    margin-left:15px;
-    text-decoration:none;
-}
+/* HERO */
 
 .hero{
-    text-align:center;
-    padding:80px;
-    background:#f4f6f9;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 10%;
+background:white;
 }
 
-.hero button{
-    padding:10px 20px;
-    background:#2c7be5;
-    color:white;
-    border:none;
+.hero-left{
+width:50%;
 }
 
-.services{
-    padding:50px;
-    text-align:center;
+.hero-left h1{
+font-size:42px;
 }
 
-.service-container{
-    display:flex;
-    justify-content:center;
-    gap:20px;
+.hero-left p{
+font-size:18px;
+margin:20px 0;
 }
 
-.service-box{
-    border:1px solid #ddd;
-    padding:20px;
-    width:200px;
+.hero-right img{
+width:350px;
 }
 
-.cta{
-    text-align:center;
-    padding:50px;
-    background:#e9f2ff;
+
+/* BUTTON */
+
+.btn-primary{
+background:#3498db;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
 }
+
+.btn-primary:hover{
+background:#2980b9;
+}
+
+
+/* SEARCH */
+
+.search-box{
+text-align:center;
+padding:40px;
+background:#ecf0f1;
+}
+
+.search-box input{
+padding:12px;
+width:300px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.search-box button{
+padding:12px 20px;
+background:#3498db;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+
+/* CONTAINER */
+
+.container{
+width:90%;
+margin:auto;
+padding:40px 0;
+}
+
+
+/* DOCTOR CARDS */
+
+.doctor-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.doctor-card{
+background:white;
+padding:20px;
+border-radius:8px;
+text-align:center;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.doctor-card img{
+width:120px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    background:#2c7be5;
-    color:white;
-    padding:10px;
-}
-
-.form-section{
-    width:350px;
-    margin:60px auto;
-    padding:30px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    text-align:center;
-}
-
-.form-section h2{
-    margin-bottom:20px;
-}
-
-form input, form select{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:4px;
-}
-
-form button{
-    width:100%;
-    padding:10px;
-    background:#2c7be5;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-form button:hover{
-    background:#1a5fd1;
-}
-
-.form-section{
-    width:350px;
-    margin:70px auto;
-    padding:30px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    text-align:center;
-}
-
-form input{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:4px;
-}
-
-form button{
-    width:100%;
-    padding:10px;
-    background:#2c7be5;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-form button:hover{
-    background:#1a5fd1;
-}
-.dashboard{
-    text-align:center;
-    padding:40px;
-}
-
-.dashboard-container{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:30px;
-}
-
-.card{
-    border:1px solid #ddd;
-    padding:20px;
-    width:220px;
-    border-radius:8px;
-}
-
-.card button{
-    padding:8px 15px;
-    background:#2c7be5;
-    color:white;
-    border:none;
-    border-radius:4px;
-}
-
-.appointment-table{
-    padding:40px;
-    text-align:center;
-}
-
-table{
-    margin:auto;
-    border-collapse:collapse;
-    width:60%;
-}
-
-table, th, td{
-    border:1px solid #ccc;
-}
-
-th, td{
-    padding:10px;
-}
-
-.dashboard{
-    text-align:center;
-    padding:40px;
-}
-
-.dashboard-container{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:30px;
-}
-
-.card{
-    border:1px solid #ddd;
-    padding:20px;
-    width:220px;
-    border-radius:8px;
-}
-
-.appointment-table{
-    padding:40px;
-    text-align:center;
-}
-
-table{
-    margin:auto;
-    border-collapse:collapse;
-    width:70%;
-}
-
-table, th, td{
-    border:1px solid #ccc;
-}
-
-th, td{
-    padding:10px;
-}
-
-.form-section{
-    width:400px;
-    margin:60px auto;
-    padding:30px;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
-
-.form-section h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-form label{
-    display:block;
-    margin-top:10px;
-}
-
-form input, form select, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:4px;
-}
-
-textarea{
-    height:80px;
-}
-
-form button{
-    width:100%;
-    padding:10px;
-    margin-top:15px;
-    background:#2c7be5;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-form button:hover{
-    background:#1a5fd1;
+text-align:center;
+padding:20px;
+background:#2c3e50;
+color:white;
+margin-top:40px;
 }

@@ -11,12 +11,12 @@
 
 <div class="sidebar">
 
-<h3>Doctor Panel</h3>
+<h3>Patient</h3>
 
-<a href="/doctor/dashboard">Dashboard</a>
+<a href="/dashboard">Dashboard</a>
 <br><br>
 
-<a href="/doctor/slots">Manage Slots</a>
+<a href="/doctors">Find Doctors</a>
 <br><br>
 
 <a href="/logout">Logout</a>
@@ -25,28 +25,31 @@
 
 <div class="dashboard">
 
-<h2>Today's Patients</h2>
+<h2>My Appointments</h2>
 
 <table class="table">
 
 <tr>
+<th>Doctor</th>
+<th>Date</th>
+<th>Slot</th>
 <th>Token</th>
-<th>Patient</th>
-<th>Time</th>
 <th>Status</th>
 </tr>
 
-{% for p in patients %}
+{% for a in appointments %}
 
 <tr>
 
-<td>{{p.token}}</td>
+<td>{{a.doctor}}</td>
 
-<td>{{p.name}}</td>
+<td>{{a.date}}</td>
 
-<td>{{p.time}}</td>
+<td>{{a.slot}}</td>
 
-<td>{{p.status}}</td>
+<td>{{a.token}}</td>
+
+<td>{{a.status}}</td>
 
 </tr>
 
