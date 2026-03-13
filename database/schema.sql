@@ -1,8 +1,35 @@
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    password VARCHAR(255),
-    role ENUM('patient','doctor','admin') DEFAULT 'patient'
+
+
+CREATE DATABASE hospital_db;
+USE hospital_db;
+
+CREATE TABLE users(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+email VARCHAR(100),
+password VARCHAR(100),
+role VARCHAR(20)
+);
+
+CREATE TABLE doctors(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+specialty VARCHAR(100),
+experience INT
+);
+
+CREATE TABLE slots(
+id INT AUTO_INCREMENT PRIMARY KEY,
+doctor_id INT,
+slot_time VARCHAR(50)
+);
+
+CREATE TABLE appointments(
+id INT AUTO_INCREMENT PRIMARY KEY,
+patient_id INT,
+doctor_id INT,
+slot_id INT,
+token INT,
+status VARCHAR(20)
 );
