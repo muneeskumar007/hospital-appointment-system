@@ -45,7 +45,6 @@ def doctors():
 
     return render_template("doctor.html", doctors=doctors)
 
-
 @doctor_bp.route("/doctor/<int:id>")
 def doctor_profile(id):
 
@@ -56,6 +55,10 @@ def doctor_profile(id):
     )
 
     r = cur.fetchone()
+    cur.close()
+
+    if not r:
+        return "Doctor not found"
 
     doctor = {
         "id": r[0],

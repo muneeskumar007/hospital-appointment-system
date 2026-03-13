@@ -44,9 +44,13 @@ status VARCHAR(20)
 
 
 
-
 INSERT INTO doctors (name, specialty, experience, fee)
 VALUES
 ('Dr. Kumar','Cardiologist',10,500),
 ('Dr. Meena','Dermatologist',7,400),
 ('Dr. Raj','Orthopedic',12,600);
+
+('Dr. Anjali', 'Pediatrician', 8, 450),
+('Dr. Suresh', 'Neurologist', 15, 700),
+('Dr. Priya', 'Gynecologist', 9, 500),
+('Dr. Ramesh', 'ENT Specialist', 11, 550);
