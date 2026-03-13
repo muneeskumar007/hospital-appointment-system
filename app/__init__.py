@@ -1,14 +1,15 @@
 from flask import Flask
 from app.services.db import mysql
 
+
 def create_app():
 
     app = Flask(__name__)
 
-    app.config['MYSQL_HOST'] = 'localhost'
-    app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = 'root123'
-    app.config['MYSQL_DB'] = 'hospital_db'
+    app.config["MYSQL_HOST"] = "localhost"
+    app.config["MYSQL_USER"] = "root"
+    app.config["MYSQL_PASSWORD"] = "root123"
+    app.config["MYSQL_DB"] = "hospital_db"
 
     mysql.init_app(app)
 

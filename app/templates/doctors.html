@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+</head>
+<body>
+
+<h1>Doctors List</h1>
+
+{% for doctor in doctors %}
+
+<div style="border:1px solid gray;padding:10px;margin:10px">
+
+    <h3>Dr {{ doctor.name }}</h3>
+
+    <p>Specialty: {{ doctor.specialty }}</p>
+
+    <p>Experience: {{ doctor.experience }} years</p>
+
+    <p>Consultation Fee: ₹{{ doctor.fee }}</p>
+
+    <a href="/doctor/{{ doctor.id }}">View Profile</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

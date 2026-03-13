@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>Register - HospitalCare</title>
 
@@ -116,10 +117,16 @@ nav a{
 
 </style>
 
+=======
+<title>Register</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+>>>>>>> 164d052d7955500f03562875e13982e5aeeec690
 </head>
 
 <body>
 
+<<<<<<< HEAD
 <nav>
 
 <h2>🏥 HospitalCare</h2>
@@ -147,25 +154,46 @@ nav a{
 <input type="email" name="email" placeholder="Email Address" required>
 
 <input type="tel" name="phone" placeholder="Phone Number" required>
+=======
+<div class="auth-container">
+
+<div class="auth-left">
+
+<h2>Join Our Hospital Portal</h2>
+<p>Book appointments easily</p>
+
+<img src="{{ url_for('static', filename='images/doctor2.jpg') }}">
+
+</div>
+
+
+<div class="auth-right">
+
+<h2>Patient Registration</h2>
+
+<form method="POST" class="auth-form">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+>>>>>>> 164d052d7955500f03562875e13982e5aeeec690
 
 <input type="password" name="password" placeholder="Password" required>
 
-<select name="role">
-
-<option value="patient">Patient</option>
-<option value="doctor">Doctor</option>
-
-</select>
-
-<button type="submit">Register</button>
+<button class="auth-btn">Register</button>
 
 </form>
 
+<<<<<<< HEAD
 <div class="login-link">
 
 Already have an account?  
 <a href="/login">Login here</a>
 
+=======
+<div class="auth-link">
+<a href="/login">Already have an account? Login</a>
+>>>>>>> 164d052d7955500f03562875e13982e5aeeec690
 </div>
 
 </div>
