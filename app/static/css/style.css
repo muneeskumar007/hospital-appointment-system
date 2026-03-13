@@ -381,6 +381,7 @@ border-radius:6px;
 font-size:14px;
 }
 
+
 .auth-btn{
 background:#3498db;
 color:white;
@@ -405,6 +406,8 @@ color:#3498db;
 text-decoration:none;
 }
 
+
+
 .auth-tabs{
 margin-bottom:20px;
 }
@@ -421,7 +424,9 @@ background:#ecf0f1;
 cursor:pointer;
 border-radius:5px;
 }
-
+.auth-tabs button:hover{
+   background: #3498db;
+}
 .auth-tabs button.active{
 background:#3498db;
 color:white;
@@ -486,7 +491,7 @@ font-size:24px;
 }
 
 .user-box{
-background:white;
+background:blue;
 padding:8px 15px;
 border-radius:6px;
 box-shadow:0 2px 6px rgba(0,0,0,0.1);
@@ -614,7 +619,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 8%;
-background:white;
+background:#3498db;
 box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -636,16 +641,16 @@ margin:0 15px;
 
 nav ul li a{
 text-decoration:none;
-color:#333;
+color:white;
 font-weight:500;
 }
 
 nav ul li a:hover{
-color:#3498db;
+color:black;
 }
 
 .nav-btn{
-background:#3498db;
+background:rgb(33, 33, 155);
 color:white;
 border:none;
 padding:10px 18px;
@@ -654,7 +659,7 @@ cursor:pointer;
 }
 
 .nav-btn:hover{
-background:#2980b9;
+background:#1383e6;
 }
 
 
