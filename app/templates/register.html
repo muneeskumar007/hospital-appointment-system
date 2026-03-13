@@ -1,76 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Register - Hospital Appointment</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <form method="POST" action="/register" onsubmit="return validateRegister()"></form>
+<title>Register</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <h2>🏥 HospitalCare</h2>
+<div class="auth-container">
 
-        <div>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-        </div>
-    </nav>
-</header>
+<div class="auth-left">
 
-<section class="form-section">
+<h2>Join Our Hospital Portal</h2>
+<p>Book appointments easily</p>
 
-    <h2>Create Account</h2>
+<img src="{{ url_for('static', filename='images/doctor.png') }}">
 
-    <form method="POST" action="/register">
+</div>
 
-        <input type="text" name="name" placeholder="Full Name" required>
 
-        <input type="email" name="email" placeholder="Email Address" required>
+<div class="auth-right">
 
-        <input type="tel" name="phone" placeholder="Phone Number" required>
+<h2>Patient Registration</h2>
 
-        <input type="password" name="password" placeholder="Password" required>
+<form method="POST" class="auth-form">
 
-        <select name="role">
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-        </select>
-
-        <button type="submit">Register</button>
-
-    </form>
-
-    <p>
-        Already have an account?
-        <a href="/login">Login here</a>
-    </p>
-
-</section>
-
-</body>
-</html>
-
-<h2>Register</h2>
-
-<form method="POST">
-
-<input type="text" name="name" placeholder="Name" required>
+<input type="text" name="name" placeholder="Full Name" required>
 
 <input type="email" name="email" placeholder="Email" required>
 
 <input type="password" name="password" placeholder="Password" required>
 
-<select name="role">
-
-<option value="patient">Patient</option>
-<option value="doctor">Doctor</option>
-
-</select>
-
-<button type="submit">Register</button>
+<button class="auth-btn">Register</button>
 
 </form>
+
+<div class="auth-link">
+<a href="/login">Already have an account? Login</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
