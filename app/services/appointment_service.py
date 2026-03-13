@@ -5,7 +5,7 @@ def get_db():
     return mysqldb.connect(
         host="localhost",
         user="root",
-        passwd="",
+        passwd="root123",
         db="hospital_db"
     )
 

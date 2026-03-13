@@ -3,31 +3,66 @@ from app.services.db import mysql
 
 doctor_bp = Blueprint("doctor", __name__)
 
+
+@doctor_bp.route("/")
+def home():
+
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT id,name,specialty,experience,fee FROM doctors")
+    rows = cur.fetchall()
+
+    doctors = []
+
+    for r in rows:
+        doctors.append({
+            "id": r[0],
+            "name": r[1],
+            "specialty": r[2],
+            "experience": r[3],
+            "fee": r[4]
+        })
+
+    return render_template("index.html", doctors=doctors)
+
+
+@doctor_bp.route("/doctors")
+def doctors():
+
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT id,name,specialty,experience,fee FROM doctors")
+    rows = cur.fetchall()
+
+    doctors = []
+
+    for r in rows:
+        doctors.append({
+            "id": r[0],
+            "name": r[1],
+            "specialty": r[2],
+            "experience": r[3],
+            "fee": r[4]
+        })
+
+    return render_template("doctor.html", doctors=doctors)
+
+
 @doctor_bp.route("/doctor/<int:id>")
 def doctor_profile(id):
 
     cur = mysql.connection.cursor()
+    cur.execute(
+        "SELECT id,name,specialty,experience,fee FROM doctors WHERE id=%s",
+        (id,)
+    )
 
-    cur.execute("SELECT * FROM doctors WHERE id=%s",(id,))
-    d = cur.fetchone()
+    r = cur.fetchone()
 
     doctor = {
-        "id": d[0],
-        "name": d[1],
-        "specialty": d[2],
-        "experience": d[3],
-        "fee": d[4]
+        "id": r[0],
+        "name": r[1],
+        "specialty": r[2],
+        "experience": r[3],
+        "fee": r[4]
     }
 
-    cur.execute("SELECT * FROM slots WHERE doctor_id=%s",(id,))
-    slots = cur.fetchall()
-
-    slot_list = []
-
-    for s in slots:
-        slot_list.append({
-            "id": s[0],
-            "time": s[2]
-        })
-
-    return render_template("doctor_profile.html",doctor=doctor,slots=slot_list)
+    return render_template("doctor.html", doctor=doctor)
