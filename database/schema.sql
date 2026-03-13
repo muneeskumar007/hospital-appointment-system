@@ -4,19 +4,26 @@
 CREATE DATABASE hospital_db;
 USE hospital_db;
 
+
+
+CREATE TABLE doctors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    specialty VARCHAR(100),
+    experience INT,
+    fee INT
+);
+
+
+
+
+
 CREATE TABLE users(
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(100),
 email VARCHAR(100),
 password VARCHAR(100),
 role VARCHAR(20)
-);
-
-CREATE TABLE doctors(
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(100),
-specialty VARCHAR(100),
-experience INT
 );
 
 CREATE TABLE slots(
