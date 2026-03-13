@@ -1,66 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register - Hospital Appointment</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <form method="POST" action="/register" onsubmit="return validateRegister()"></form>
+<meta charset="UTF-8">
+<title>Register - HospitalCare</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg,#4facfe,#00f2fe);
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav h2{
+    margin:0;
+    color:#2c3e50;
+}
+
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#2c3e50;
+    font-weight:600;
+}
+
+/* Register Card */
+
+.register-container{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.register-card{
+
+    background:white;
+    padding:40px;
+    width:360px;
+    border-radius:10px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+
+}
+
+.register-card h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* Inputs */
+
+.register-card input,
+.register-card select{
+
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+
+    border-radius:6px;
+    border:1px solid #ccc;
+
+    font-size:14px;
+
+}
+
+/* Button */
+
+.register-card button{
+
+    width:100%;
+    padding:12px;
+    border:none;
+
+    background:#3498db;
+    color:white;
+
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+
+}
+
+.register-card button:hover{
+    background:#2980b9;
+}
+
+.login-link{
+
+    text-align:center;
+    margin-top:15px;
+
+}
+
+.login-link a{
+
+    color:#3498db;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <h2>🏥 HospitalCare</h2>
+<nav>
 
-        <div>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-        </div>
-    </nav>
-</header>
+<h2>🏥 HospitalCare</h2>
 
-<section class="form-section">
+<div>
 
-    <h2>Create Account</h2>
+<a href="/">Home</a>
+<a href="/login">Login</a>
 
-    <form method="POST" action="/register">
+</div>
 
-        <input type="text" name="name" placeholder="Full Name" required>
+</nav>
 
-        <input type="email" name="email" placeholder="Email Address" required>
 
-        <input type="tel" name="phone" placeholder="Phone Number" required>
+<div class="register-container">
 
-        <input type="password" name="password" placeholder="Password" required>
+<div class="register-card">
 
-        <select name="role">
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-        </select>
+<h2>Create Account</h2>
 
-        <button type="submit">Register</button>
+<form method="POST" action="/register">
 
-    </form>
+<input type="text" name="name" placeholder="Full Name" required>
 
-    <p>
-        Already have an account?
-        <a href="/login">Login here</a>
-    </p>
+<input type="email" name="email" placeholder="Email Address" required>
 
-</section>
-
-</body>
-</html>
-
-<h2>Register</h2>
-
-<form method="POST">
-
-<input type="text" name="name" placeholder="Name" required>
-
-<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
 <input type="password" name="password" placeholder="Password" required>
 
@@ -74,3 +160,17 @@
 <button type="submit">Register</button>
 
 </form>
+
+<div class="login-link">
+
+Already have an account?  
+<a href="/login">Login here</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

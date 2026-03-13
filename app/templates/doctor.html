@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -37,6 +37,31 @@
 </div>
 
 </div>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Doctors List</h1>
+
+{% for doctor in doctors %}
+<div style="border:1px solid #ccc;padding:10px;margin:10px;">
+    <h3>{{ doctor.name }}</h3>
+    <p>Specialization: {{ doctor.specialization }}</p>
+    <p>Experience: {{ doctor.experience }} years</p>
+    <p>Consultation Fee: ₹{{ doctor.fee }}</p>
+
+    <a href="/doctor/{{ doctor.id }}">View Profile</a>
+</div>
+{% endfor %}
 
 </body>
 </html>
