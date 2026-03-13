@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+<style>
+
+.profile{
+display:flex;
+gap:30px;
+}
+
+.slot{
+background:#2d6cdf;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+text-decoration:none;
+margin:5px;
+display:inline-block;
+}
+
+.slot:hover{
+background:#1b4fa8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>Doctor Profile</h2>
+<a href="/doctors">Back</a>
+</div>
+
+<div class="container">
+
+<div class="card profile">
+
+<div>
+
+<h2>Dr {{doctor.name}}</h2>
+
+<p><b>Specialty:</b> {{doctor.specialty}}</p>
+
+<p><b>Experience:</b> {{doctor.experience}} Years</p>
+
+<p><b>Consultation Fee:</b> ₹{{doctor.fee}}</p>
+
+</div>
+
+</div>
+
+<h3>Available Appointment Slots</h3>
+
+{% for slot in slots %}
+
+<a class="slot" href="/book/{{doctor.id}}/{{slot.id}}">
+{{slot.time}}
+</a>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

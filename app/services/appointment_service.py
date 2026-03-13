@@ -1,8 +1,8 @@
-import MySQLdb
+import mysqldb
 from flask import current_app
 
 def get_db():
-    return MySQLdb.connect(
+    return mysqldb.connect(
         host="localhost",
         user="root",
         passwd="",

@@ -1,89 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hospital Appointment System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<title>Hospital Appointment System</title>
+
+<link rel="stylesheet" href="/static/css/style.css">
+
 </head>
 
 <body>
 
-<!-- Navbar -->
-<header>
-    <nav>
-        <h2>🏥 HospitalCare</h2>
+<!-- NAVBAR -->
 
-        <div>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-            <a href="/appointment">Book Appointment</a>
-        </div>
-    </nav>
-</header>
+<div class="navbar">
+
+<div class="logo">
+<h2>🏥 MediCare</h2>
+</div>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/doctors">Find Doctors</a>
+<a href="/login">Login</a>
+</div>
+
+</div>
 
 
-<!-- Hero Section -->
+<!-- HERO SECTION -->
+
 <section class="hero">
 
-    <h1>Book Your Hospital Appointment Online</h1>
+<div class="hero-left">
 
-    <p>
-        Easy and fast appointment booking with trusted doctors.
-    </p>
+<h1>Book Doctor Appointments Online</h1>
 
-    <a href="/appointment">
-        <button>Book Appointment</button>
-    </a>
+<p>Find the best doctors near you and schedule appointments instantly.</p>
 
-</section>
+<a class="btn-primary" href="/doctors">Find Doctors</a>
 
+</div>
 
-<!-- Services -->
-<section class="services">
+<div class="hero-right">
 
-    <h2>Our Services</h2>
+<img src="/static/images/doctor.png" alt="doctor">
 
-    <div class="service-container">
-
-        <div class="service-box">
-            <h3>👨‍⚕️ Expert Doctors</h3>
-            <p>Consult with experienced medical professionals.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>📅 Online Booking</h3>
-            <p>Book appointments easily without waiting in queues.</p>
-        </div>
-
-        <div class="service-box">
-            <h3>⏰ 24/7 Support</h3>
-            <p>Our hospital support team is available anytime.</p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- Call To Action -->
-<section class="cta">
+<!-- SEARCH BAR -->
 
-    <h2>Need Medical Help?</h2>
+<div class="search-box">
 
-    <p>Book an appointment with our doctors today.</p>
+<form action="/doctors">
 
-    <a href="/appointment">
-        <button>Book Now</button>
-    </a>
+<input type="text" placeholder="Search doctor or specialty">
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
+
+
+<!-- FEATURED DOCTORS -->
+
+<section class="container">
+
+<h2>Featured Doctors</h2>
+
+<div class="doctor-grid">
+
+<div class="doctor-card">
+
+<img src="/static/images/doc1.png">
+
+<h3>Dr Sarah Jenkins</h3>
+
+<p>Cardiologist</p>
+
+<p>⭐ 4.8 | 12 years experience</p>
+
+<a class="btn-primary" href="/doctor/1">View Profile</a>
+
+</div>
+
+
+<div class="doctor-card">
+
+<img src="/static/images/doc2.png">
+
+<h3>Dr Michael Smith</h3>
+
+<p>Dermatologist</p>
+
+<p>⭐ 4.6 | 9 years experience</p>
+
+<a class="btn-primary" href="/doctor/2">View Profile</a>
+
+</div>
+
+
+<div class="doctor-card">
+
+<img src="/static/images/doc3.png">
+
+<h3>Dr Emily Watson</h3>
+
+<p>Neurologist</p>
+
+<p>⭐ 4.9 | 15 years experience</p>
+
+<a class="btn-primary" href="/doctor/3">View Profile</a>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- Footer -->
+<!-- FOOTER -->
+
 <footer>
 
-    <p>© 2026 Hospital Appointment System</p>
+<p>© 2026 MediCare Hospital Appointment System</p>
 
 </footer>
 
