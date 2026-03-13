@@ -39,13 +39,13 @@ body.auth-page{
 }
 
 .bg-animation::before{
-  background: rgba(52, 152, 219, 0.6);
+  background: rgba(48, 161, 237, 0.6);
   top: -25%;
   left: -20%;
 }
 
 .bg-animation::after{
-  background: rgba(155, 89, 182, 0.55);
+  background: rgba(247, 252, 255, 0.55);
   bottom: -25%;
   right: -25%;
   animation-duration: 8s;
@@ -59,7 +59,7 @@ body.auth-page{
 
 /* Login form animations */
 .auth-container{
-  position: relative;
+  position: center;
   z-index: 2;
   display:flex;
   width:900px;
@@ -326,12 +326,12 @@ margin-top:40px;
    ========================= */
 
 .auth-container{
-  position: relative;
+  position: center;
   z-index: 2;
   display:flex;
   width:900px;
   margin:60px auto;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   border-radius:10px;
   overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,0.15);
@@ -339,7 +339,7 @@ margin-top:40px;
 
 .auth-left{
 width:50%;
-background:#eaf3ff;
+background:#ffffff;
 padding:40px;
 text-align:center;
 }
