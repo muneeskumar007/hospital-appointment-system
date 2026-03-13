@@ -43,7 +43,7 @@ def doctors():
             "fee": r[4]
         })
 
-    return render_template("doctors.html", doctors=doctors)
+    return render_template("doctor.html", doctors=doctors)
 
 
 @doctor_bp.route("/doctor/<int:id>")
