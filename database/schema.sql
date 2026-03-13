@@ -38,8 +38,33 @@ CREATE TABLE IF NOT EXISTS appointments (
     FOREIGN KEY (doctor_id) REFERENCES doctors(id)
 );
 
+<<<<<<< HEAD
 -- Insert sample data
 INSERT INTO doctors (name, specialty, experience, fee) VALUES
 ('Dr. John Smith', 'Cardiology', 10, 500.00),
 ('Dr. Sarah Johnson', 'Dermatology', 8, 400.00),
 ('Dr. Michael Brown', 'Orthopedics', 12, 600.00);
+=======
+CREATE TABLE appointments(
+id INT AUTO_INCREMENT PRIMARY KEY,
+patient_id INT,
+doctor_id INT,
+slot_id INT,
+token INT,
+status VARCHAR(20)
+);
+
+
+
+
+INSERT INTO doctors (name, specialty, experience, fee)
+VALUES
+('Dr. Kumar','Cardiologist',10,500),
+('Dr. Meena','Dermatologist',7,400),
+('Dr. Raj','Orthopedic',12,600);
+
+('Dr. Anjali', 'Pediatrician', 8, 450),
+('Dr. Suresh', 'Neurologist', 15, 700),
+('Dr. Priya', 'Gynecologist', 9, 500),
+('Dr. Ramesh', 'ENT Specialist', 11, 550);
+>>>>>>> 2e932a59eeff27b756690536fa22e77161f9da5c
