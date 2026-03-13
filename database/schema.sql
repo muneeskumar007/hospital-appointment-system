@@ -33,3 +33,13 @@ slot_id INT,
 token INT,
 status VARCHAR(20)
 );
+
+
+
+
+
+INSERT INTO doctors (name, specialty, experience, fee)
+VALUES
+('Dr. Kumar','Cardiologist',10,500),
+('Dr. Meena','Dermatologist',7,400),
+('Dr. Raj','Orthopedic',12,600);
