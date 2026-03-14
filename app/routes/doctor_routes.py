@@ -1,71 +1,34 @@
 from flask import Blueprint, render_template
-from app.services.db import mysql
+from app.config import get_db_connection
 
-doctor_bp = Blueprint("doctor", __name__)
+doctor_bp = Blueprint('doctor', __name__)
 
-
-@doctor_bp.route("/")
-def home():
-
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT id,name,specialty,experience,fee FROM doctors")
-    rows = cur.fetchall()
-
-    doctors = []
-
-    for r in rows:
-        doctors.append({
-            "id": r[0],
-            "name": r[1],
-            "specialty": r[2],
-            "experience": r[3],
-            "fee": r[4]
-        })
-
-    return render_template("index.html", doctors=doctors)
-
-
-@doctor_bp.route("/doctors")
+# Doctor List Page
+@doctor_bp.route('/doctors')
 def doctors():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
 
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT id,name,specialty,experience,fee FROM doctors")
-    rows = cur.fetchall()
+    cursor.execute("SELECT * FROM doctors")
+    doctors = cursor.fetchall()
 
-    doctors = []
+    cursor.close()
+    conn.close()
 
-    for r in rows:
-        doctors.append({
-            "id": r[0],
-            "name": r[1],
-            "specialty": r[2],
-            "experience": r[3],
-            "fee": r[4]
-        })
+    return render_template("doctors.html", doctors=doctors)
 
-    return render_template("doctor.html", doctors=doctors)
 
-@doctor_bp.route("/doctor/<int:id>")
+# Doctor Profile Page
+@doctor_bp.route('/doctor/<int:id>')
 def doctor_profile(id):
 
-    cur = mysql.connection.cursor()
-    cur.execute(
-        "SELECT id,name,specialty,experience,fee FROM doctors WHERE id=%s",
-        (id,)
-    )
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
 
-    r = cur.fetchone()
-    cur.close()
+    cursor.execute("SELECT * FROM doctors WHERE id = %s", (id,))
+    doctor = cursor.fetchone()
 
-    if not r:
-        return "Doctor not found"
+    cursor.close()
+    conn.close()
 
-    doctor = {
-        "id": r[0],
-        "name": r[1],
-        "specialty": r[2],
-        "experience": r[3],
-        "fee": r[4]
-    }
-
-    return render_template("doctor.html", doctor=doctor)
+    return render_template("doctor_profile.html", doctor=doctor)

@@ -325,17 +325,15 @@ margin-top:40px;
    AUTH PAGES (LOGIN / REGISTER)
    ========================= */
 
-.auth-container{
-  position: center;
-  z-index: 2;
-  display:flex;
+/*.auth-container{
+  
   width:900px;
   margin:60px auto;
   background: rgba(255, 255, 255, 0.92);
   border-radius:10px;
   overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,0.15);
-}
+}*/
 
 .auth-left{
 width:50%;

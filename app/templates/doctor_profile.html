@@ -1,71 +1,50 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
-
 <head>
-
-<link rel="stylesheet" href="/static/css/style.css">
-
-<style>
-
-.profile{
-display:flex;
-gap:30px;
-}
-
-.slot{
-background:#2d6cdf;
-color:white;
-padding:10px 15px;
-border-radius:6px;
-text-decoration:none;
-margin:5px;
-display:inline-block;
-}
-
-.slot:hover{
-background:#1b4fa8;
-}
-
-</style>
-
+<title>Doctor Profile</title>
 </head>
 
 <body>
 
-<div class="navbar">
 <h2>Doctor Profile</h2>
-<a href="/doctors">Back</a>
-</div>
 
-<div class="container">
+{% if doctor %}
+<h3>{{ doctor.name }}</h3>
+<p>Specialty: {{ doctor.specialty }}</p>
+<p>Experience: {{ doctor.experience }} years</p>
+<p>Consultation Fee: ₹{{ doctor.fee }}</p>
 
-<div class="card profile">
+<a href="/appointment/{{ doctor.id }}">Book Appointment</a>
 
-<div>
+{% else %}
+<p>Doctor not found</p>
+{% endif %}
 
-<h2>Dr {{doctor.name}}</h2>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Profile</title>
+</head>
 
-<p><b>Specialty:</b> {{doctor.specialty}}</p>
+<body>
 
-<p><b>Experience:</b> {{doctor.experience}} Years</p>
+<h1>Doctor Profile</h1>
 
-<p><b>Consultation Fee:</b> ₹{{doctor.fee}}</p>
+{% if doctor %}
 
-</div>
+<h2>{{ doctor.name }}</h2>
 
-</div>
+<p><b>Specialty:</b> {{ doctor.specialty }}</p>
+<p><b>Experience:</b> {{ doctor.experience }} years</p>
+<p><b>Consultation Fee:</b> ₹{{ doctor.fee }}</p>
 
-<h3>Available Appointment Slots</h3>
+{% else %}
 
-{% for slot in slots %}
+<h3>Doctor not found</h3>
 
-<a class="slot" href="/book/{{doctor.id}}/{{slot.id}}">
-{{slot.time}}
-</a>
-
-{% endfor %}
-
-</div>
+{% endif %}
 
 </body>
 </html>
